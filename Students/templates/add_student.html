@@ -1,0 +1,96 @@
+{% load static %}
+
+<!-- ... previous HTML code ... -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be Well</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .navbar-top {
+            background-color: #333;
+        }
+        .navbar-brand, .nav-link, .nav-item {
+            color: #fff;
+        }
+        .container-fluid {
+            padding: 20px;
+        }
+        .table-responsive {
+            border: 3px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .progress {
+            height: 20px;
+        }
+        .table tbody tr:hover {
+            transform: scale(1.02);
+            transition: all .2s; 
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-md-4">
+                <!-- ... existing content ... -->
+    
+                <div class="my-4">
+                    <h2>Add Student</h2>
+                    <form method="POST" action="{% url 'add_student' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="course_image">Course Image URL:</label>
+                            <input type="text" class="form-control" id="course_image" name="course_image">
+                        </div>
+                        <div class="form-group">
+                            <label for="course_name">Course Name:</label>
+                            <input type="text" class="form-control" id="course_name" name="course_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lesson_name">Lesson Name:</label>
+                            <input type="text" class="form-control" id="lesson_name" name="lesson_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exam_id">Exam ID:</label>
+                            <input type="text" class="form-control" id="exam_id" name="exam_id">
+                        </div>
+                        <div class="form-group">
+                            <label for="section_image">Section Image URL:</label>
+                            <input type="text" class="form-control" id="section_image" name="section_image">
+                        </div>
+                        <div class="form-group">
+                            <label for="video_id">Video ID:</label>
+                            <input type="text" class="form-control" id="video_id" name="video_id">
+                        </div>
+                        <!-- Add more fields as needed -->
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+    
+                {% if request.session.student_added %}
+                <div class="alert alert-success" role="alert">
+                    Student added successfully!
+                </div>
+                {% endif %}
+    
+            </main>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!-- ... remaining HTML code ... -->

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BeWell Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .top-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+        .user-profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        .time-ago {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">BeWell Dashboard</div>
+        <div class="user-profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <span>{{ username }}</span>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <h1>Course Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Last Usage</th>
+                <th>Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student_name }}</td>
+                    <td>{{ last_using }} minutes ago</td>
+                    <td>{{ progress }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>BeWell Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Details</h1>
+    <img src="{{ course_image }}" alt="Course Image">
+    <h2>{{ course_name }}</h2>
+
+    {% for lesson in lessons %}
+        <h3>{{ lesson.lessonName }}</h3>
+        {% for section in lesson.sections %}
+            <table>
+                <tr>
+                    <th>Section:</th>
+                    <td>{{ section.examId }}</td>
+                </tr>
+                {% if section.image %}
+                    <tr>
+                        <th>Image:</th>
+                        <td><img src="{{ section.image }}" alt="Section Image"></td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <th>Text:</th>
+                    <td>{{ section.text }}</td>
+                </tr>
+                {% if section.videosIds %}
+                    <tr>
+                        <th>Video IDs:</th>
+                        <td>
+                            <ul>
+                                {% for video_id in section.videosIds %}
+                                    <li>{{ video_id }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endif %}
+            </table>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html> -->

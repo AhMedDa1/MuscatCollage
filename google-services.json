@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1042574144855",
+    "firebase_url": "https://multivendor-48a9a-default-rtdb.firebaseio.com",
+    "project_id": "multivendor-48a9a",
+    "storage_bucket": "multivendor-48a9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042574144855:android:5aea630f3d7d1a3e02fa12",
+        "android_client_info": {
+          "package_name": "om.amwal.shelf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042574144855-dvdh1h4ejadn5mv86dob09usaf2q57ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgMdUk0Sb82CNcD15XnsWPUL4X4_ebQdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042574144855-dvdh1h4ejadn5mv86dob09usaf2q57ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

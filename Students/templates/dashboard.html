@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {background-color: #f5f5f5;}
+
+    /* Add styles for the progress bar */
+    .progress-bar {
+      width: 100%;
+      background-color: #f3f3f3;
+    }
+    .progress-bar > div {
+      background-color: #4caf50;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  {% load students_extras %}  <!-- Load your custom template filters -->
+
+  <h1>Student Dashboard</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Progress</th>
+      <th>Last App Usage</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>
+        <div class="progress-bar">
+          <div style="width: {{ student.progress }}%;">
+            <!-- The width of this div will be equal to the student's progress -->
+            {{ student.progress }}%
+          </div>
+        </div>
+      </td>
+      <td>{{ student.last_app_usage|timesince_custom }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

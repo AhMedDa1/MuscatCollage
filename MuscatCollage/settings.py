@@ -11,22 +11,29 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import Students.firebase_setup
+import firebase_admin
+from firebase_admin import credentials
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ad1fy4b(d(r)er3=#pvce@q(&t76c)rr%y_$#marf!87em^#&!'
+SECRET_KEY = 'pr5hxqh-v6s-=pt$ns-w^dvik^3q&0*ap5ks5o01cg0i%++en@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['erp.amwal.om','localhost','127.0.0.1']
 
+cred = credentials.Certificate('bewell.json')
+firebase_admin.initialize_app(cred)
 
 # Application definition
 
@@ -37,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Students',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
