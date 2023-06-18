@@ -14,8 +14,13 @@ from pathlib import Path
 import Students.firebase_setup
 import firebase_admin
 from firebase_admin import credentials
+import os
+from pathlib import Path
 
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
